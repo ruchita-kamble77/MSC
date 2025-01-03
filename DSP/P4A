@@ -1,0 +1,53 @@
+Reading Data From Text Files, Excel And The Web And Exploring Various
+
+>pip install seaborn
+
+Step 2:
+Import the Packages:
+import numpy as np
+import pandas as pd # Package for working with data frames
+import seaborn as sns # For visualization
+import matplotlib.pyplot as plt # For plotting
+# Ensure plots are displayed inline in Jupyter Notebook
+%matplotlib inline
+
+Step 3:
+Import the IRIS Dataset: Code:
+# Load the Iris dataset using Seaborn's built-in dataset loader
+iris = sns.load_dataset('iris')
+# Convert to a Pandas DataFrame (optional since it's already a DataFrame)
+my_data_frame = pd.DataFrame(iris)
+# Display the first 5 rows of the DataFrame
+my_data_frame.head()
+
+Step 4: Simple Plot
+# Plot the histogram for the 'sepal_length' column
+plt.hist(my_data_frame['sepal_length'], bins=10, edgecolor='black')
+# Add labels and title for clarity
+plt.title('Histogram of Sepal Length')
+plt.xlabel('Sepal Length')
+plt.ylabel('Frequency')
+# Display the plot
+plt.show()
+
+step5: Plot using Seaborn
+sns.set(style="ticks", color_codes=True)
+
+Step 6:- Color Plot
+# Set Seaborn style and color codes
+sns.set(style="ticks", color_codes=True)
+# Create a pairplot with 'species' as the hue (target classification)
+sns.pairplot(iris, hue="species")
+
+Step 7:- Pairplot
+sns.pairplot(iris, height=3, vars=["petal_width", "sepal_length"], markers=["o", "s",
+"D"], hue="species")
+
+Step 8:-
+sns.pairplot(iris, kind="reg", hue="species")
+
+Step 9:-
+ sns.set(style="ticks", color_codes=True)
+g = sns.pairplot(iris, hue="species")
+Thus reading data from text file and exploring various commands for doing descriptive
+analytics on the Iris data set is executed.
