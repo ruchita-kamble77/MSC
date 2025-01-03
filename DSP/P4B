@@ -1,0 +1,48 @@
+4B. Aim : Reading data from web and exploring various commands for doing descriptive analytics on the iris dataset.
+
+Step 1:
+import seaborn as sns
+import pandas as pd
+# Read the dataset from the provided URL
+data =pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', 
+header=None)
+# Set column names
+data.columns = ['sepallength', 'sepalwidth', 'petallength', 'petalwidth', 'class']
+# Display the first few rows of the DataFrame
+print(data.head())
+
+Step 2:
+# Iterate over each column in the DataFrame
+for col in data.columns:
+    # Check if the column is numeric
+    if pd.api.types.is_numeric_dtype(data[col]):
+        # Print the statistics for each numeric column
+        print(f'Column: {col}')
+        print(f'\t Mean: {data[col].mean():.2f}')
+        print(f'\t Standard deviation: {data[col].std():.2f}')
+        print(f'\t Minimum: {data[col].min():.2f}')
+        print(f'\t Maximum: {data[col].max():.2f}')
+
+
+Step3:
+import pandas as pd
+# Load the Iris dataset
+data = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', 
+header=None)
+# Assign column names to the dataset
+data.columns = ['sepallength', 'sepalwidth', 'petallength', 'petalwidth', 'class']
+# Count the occurrences of each class in the 'class' column
+class_counts = data['class'].value_counts()
+print("Class counts:\n", class_counts)
+# Generate descriptive statistics for all columns
+summary = data.describe(include='all')
+print("\nDescriptive statistics:\n", summary)
+
+Step 4:-
+import pandas as pd
+# Exclude non-numeric columns
+numeric_data = data.select_dtypes(include=[float, int])
+# Compute the covariance matrix
+covariance_matrix = numeric_data.cov()
+print("Covariance Matrix:")
+print(covariance_matrix)
