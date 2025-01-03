@@ -1,0 +1,52 @@
+3A. Write a Python Program to work with Pandas Dataframes.
+import pandas as pd
+# Calling DataFrame constructor
+print("Empty dataframe")
+df = pd.DataFrame()
+print(df)
+print("Dataframe creation using List")
+# List of strings
+lst = ['Apple', 'Mango', 'Banana', 'Orange', 'Grapes', 'Cherry', 'Kiwi']
+# Calling DataFrame constructor on list
+df = pd.DataFrame(lst, columns=["Fruits"])  # Added a column name for clarity
+print(df)
+# Initialize data of lists
+Data = {'Name': ['Tom', 'Nick', 'Krish', 'Jack'],  # Fixed the syntax of dictionary assignment
+        'Age': [20, 21, 19, 18]}
+# Create DataFrame
+df = pd.DataFrame(Data)
+# Print the output
+print("DataFrame from dictionary of lists (1):")
+print(df)
+print("Create dataframe from dictionary of lists")
+# Dictionary of lists
+data_dict = {'Name': ["Aparna", "Pankaj", "Sudhir", "Geeku"],  # Changed variable name from `dict` to `data_dict`
+             'Degree': ["MBA", "BCA", "M.Tech", "MBA"],
+             'Score': [90, 40, 80, 98]}
+# Creating a DataFrame from a dictionary
+df = pd.DataFrame(data_dict)
+print("DataFrame from dictionary of lists (2):")
+print(df)
+# Iterating over rows using iterrows() function
+print("Iterating over rows:")
+for i, row in df.iterrows():
+    print(f"Index: {i}, Row: {row.to_dict()}")  # Print row as a dictionary for better readability
+print()
+
+3B.Pandas Dataframe Visualization. Retrieving Data from the web.
+import pandas as pd
+# Correct URL (raw GitHub link)
+url = 'https://github.com/chris1610/pbpython/raw/master/data/2018_Sales_Total_v2.xlsx'
+# Read the Excel file from the URL
+df = pd.read_excel(url)
+# Display the DataFrame
+print(df)
+
+import pandas as pd
+# Correct the file path by using a raw string or double backslashes
+df = pd.read_csv(r'D:\Ruchita\Information_Technology\MSC-IT(CC)\DS-Py\iris.csv')
+# Display the DataFrame
+print(df)
+
+
+
